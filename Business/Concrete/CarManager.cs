@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Untilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -20,25 +21,25 @@ namespace Business.Concrete
           
 
         }
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            if (car.Description.Length <= 2)
-            {
-                Console.WriteLine("Araba ismi minimum 2 karakter olmalıdır");
-            }
-            else if (car.DailyPrice <= 0)
-            {
-                Console.WriteLine("Araba günlük fiyatı 0'dan büyük olmalıdır.");
-            }
-            else
+            if (car.CarName.Length >= 2&&car.DailyPrice>0)
             {
                 _carDal.Add(car);
+                return new SuccessResult();
             }
+            
+            else
+            {
+                return new ErrorResult("ürün ismi minimum 2 karakter olmalıdır.");
+            }
+            
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
+            return new SuccessResult();
         }
 
         public List<Car> GetAll()
@@ -75,9 +76,10 @@ namespace Business.Concrete
 
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             _carDal.Update(car);
+            return new SuccessResult();
         }
     }
 }
