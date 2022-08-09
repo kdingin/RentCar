@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Business.Constants;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -11,10 +12,10 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //CarManagerTest3();
-            //RentalEvent();
+            RentalEvent();
             //CustomerEvent();
             //UserAdded();
-            UserDeleted();
+            //UserDeleted();
             //Console.WriteLine("**********************");
             //CarManagerTest2();
             //Console.WriteLine("*********************");
@@ -46,9 +47,20 @@ namespace ConsoleUI
         private static void RentalEvent()
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            foreach (var rental in rentalManager.GetRentalDetails().Data)
+            Rental rental = new Rental();
+            rental.CarId = 4;
+            rental.CustomerId = 5;
+            rental.RentDate = new DateTime(2022,08,9);
+            rental.ReturnDate = null;
+
+            var result = rentalManager.Add(rental);
+            if (result.Success)
             {
-                Console.WriteLine("Kiralanan Araç: " + rental.CarName+rental.RentalId+rental.RentDate+rental.ReturnDate+rental.CustomerId);
+                Console.WriteLine(result.Message);
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
         private static void CustomerEvent()
