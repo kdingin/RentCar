@@ -8,46 +8,52 @@ namespace Business.Constants
     public class Messages
     {
         
-        internal static string MaintenanceTime = "Sistem Bakımda.";
-        internal static string CarsListed = "Arabalar Listelendi.";
-        internal static string CarAdded = "Araba eklendi.";
-        internal static string CarNotAdded = "Araba Eklenemedi.";
-        internal static string CarDeleted = "Araba Silindi.";
-        internal static string CarByIdListed = "İstenilen Araba Bilgisi.";
-        internal static string CarUpdate = "Araba Güncellendi";
+        public static string MaintenanceTime = "Sistem Bakımda.";
+        public static string CarsListed = "Arabalar Listelendi.";
+        public static string CarAdded = "Araba eklendi.";
+        public static string CarNotAdded = "Araba Eklenemedi.";
+        public static string CarDeleted = "Araba Silindi.";
+        public static string CarByIdListed = "İstenilen Araba Bilgisi.";
+        public static string CarUpdate = "Araba Güncellendi";
 
-        internal static string ColorAdded = "Renk Eklendi.";
-        internal static string ColorDeleted = "Renk Silindi.";
-        internal static string ColorsListed = "Renkler Listelendi";
-        internal static string ColorByIdListed = "İstenilen renk Bilgisi.";
-        internal static string ColorUpdate = "Renk Güncellendi.";
-        internal static string ColorNotAdded = "Renk Eklenemedi.";
+        public static string ColorAdded="Renk Eklendi.";
+        public static string ColorDeleted = "Renk Silindi.";
+        public static string ColorsListed = "Renkler Listelendi";
+        public static string ColorByIdListed = "İstenilen renk Bilgisi.";
+        public static string ColorUpdate = "Renk Güncellendi.";
+        public static string ColorNotAdded = "Renk Eklenemedi.";
     
-        internal static string BrandAdded = "Marka Eklendi.";
-        internal static string BrandDeleted = "Marka silindi.";
-        internal static string BrandsListed = "Markalar Listelendi.";
-        internal static string BrandByIdListed = "İstenilen marka Bilgisi.";
-        internal static string BrandUpdate = "Marka Güncellendi.";
+        public static string BrandAdded = "Marka Eklendi.";
+        public static string BrandDeleted = "Marka silindi.";
+        public static string BrandsListed = "Markalar Listelendi.";
+        public static string BrandByIdListed = "İstenilen marka Bilgisi.";
+        public static string BrandUpdate = "Marka Güncellendi.";
       
-        internal static string RentalAdded = "Araç Kiralanmıştır.";
-        internal static string RentalDeleted = "Kiralama Kaldırıldı.";
-        internal static string RentalListed = "Kiralanma Bilgileri Listelendi";
-        internal static string RentalUpdate = "Kiralama Güncellendi";
-        internal static string RentalByIdListed = "Seçilen Kiralama Bilgisi";
-        internal static string RentalNotAdded = "Kiralama işlemi Başarısız.";
-        internal static string RentalCarHired = "Araç halen kullanımdadır, teslim edilmemiş.";
+        public static string RentalAdded = "Araç Kiralanmıştır.";
+        public static string RentalDeleted = "Kiralama Kaldırıldı.";
+        public static string RentalListed = "Kiralanma Bilgileri Listelendi";
+        public static string RentalUpdate = "Kiralama Güncellendi";
+        public static string RentalByIdListed = "Seçilen Kiralama Bilgisi";
+        public static string RentalNotAdded = "Kiralama işlemi Başarısız.";
+        public static string RentalCarHired = "Araç halen kullanımdadır, teslim edilmemiş.";
 
 
-        internal static string UserDeleted = "Kullanıcı Silindi";
-        internal static string UserAdded = "Kullanıcı Eklendi";
-        internal static string UserUpdate = "Kullanıcı Bilgileri Güncellendi";
-        internal static string UserListed = "Kullanıcılar Listelendi";
-        internal static string UserByIdListed = "İstenilen müşteri bilgileri";
-        internal static string UserNotAdded = "Kullanıcı Eklenemedi";
+        public static string UserDeleted = "Kullanıcı Silindi";
+        public static string UserAdded = "Kullanıcı Eklendi";
+        public static string UserUpdate = "Kullanıcı Bilgileri Güncellendi";
+        public static string UserListed = "Kullanıcılar Listelendi";
+        public static string UserByIdListed = "İstenilen müşteri bilgileri";
+        public static string UserNotAdded = "Kullanıcı Eklenemedi";
 
-        internal static string CustomerAdded = "Müşteri Eklendi.";
-        internal static string CustomerDeleted = "Müşteri Silindi.";
-        internal static string CustomerUpdate = "Müşteri Bilgileri Güncellendi.";
-        internal static string CustomerByIdListed = "Seçilen Müşteri Bilgisi.";
+        public static string CustomerAdded = "Müşteri Eklendi.";
+        public static string CustomerDeleted = "Müşteri Silindi.";
+        public static string CustomerUpdate = "Müşteri Bilgileri Güncellendi.";
+        public static string CustomerByIdListed = "Seçilen Müşteri Bilgisi.";
+
+        public static string CarImageAdded = "Araç resmi başarıyla yüklendi";
+        public static string CarImageDeleted = "Araç resmi başarıyla silindi.";
+        public static string CarImagesListed = "Araç resimleri başarıyla listelendi.";
+        public static string CarImageUpdated = "Araç resmi güncellendi.";
+        
     }
 }

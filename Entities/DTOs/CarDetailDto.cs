@@ -14,5 +14,6 @@ namespace Entities.DTOs
         public string Description { get; set; }
         public int ModelYear { get; set; }
         public string CarName { get; set; }
+        public List<string> ImagePath { get; set; }
     }
 }
