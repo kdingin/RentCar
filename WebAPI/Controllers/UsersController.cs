@@ -10,34 +10,10 @@ namespace WebAPI.Controllers
     public class UsersController : ControllerBase
     {
         IUserService _userService;
-
         public UsersController(IUserService userService)
         {
             _userService = userService;
         }
-
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _userService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyuserid")]
-        public IActionResult GetByUserId(int id)
-        {
-            var result = _userService.GetByUserId(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
         [HttpPost("add")]
         public IActionResult Add(User user)
         {
