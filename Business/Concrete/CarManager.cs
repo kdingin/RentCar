@@ -30,7 +30,7 @@ namespace Business.Concrete
 
         }
 
-        [SecuredOperation("car.add,admin")]
+       // [SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         [TransactionScopeAspect]
@@ -52,7 +52,7 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 16)
+            if (DateTime.Now.Hour == 18)
             {
                 return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
             }
@@ -81,6 +81,31 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == colorId), Messages.CarsListed);
 
         }
+        public IDataResult<List<CarDetailDto>> GetCarsByBrandIdWithDetails(int brandId)
+        {
+            List<CarDetailDto> carDetails = _carDal.GetCarDetails(c => c.BrandId == brandId);
+            if (carDetails == null)
+            {
+                return new ErrorDataResult<List<CarDetailDto>>("");
+            }
+            else
+            {
+                return new SuccessDataResult<List<CarDetailDto>>(carDetails, "");
+            }
+        }
+        public IDataResult<List<CarDetailDto>> GetCarsByColorIdWithDetails(int colorId)
+        {
+            List<CarDetailDto> carDetails = _carDal.GetCarDetails(c => c.ColorId == colorId);
+            if (carDetails == null)
+            {
+                return new ErrorDataResult<List<CarDetailDto>>("");
+            }
+            else
+            {
+                return new SuccessDataResult<List<CarDetailDto>>(carDetails, "");
+            }
+        }
+
 
         public IDataResult<List<Car>> GetCarsByDailyPrice(decimal min, decimal max)
         {
